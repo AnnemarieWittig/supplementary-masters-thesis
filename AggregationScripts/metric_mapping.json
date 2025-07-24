@@ -1,0 +1,58 @@
+{
+    "commits_coupling": {
+        "label": "Coup",
+        "group": "Commit"
+    },
+    "commits_loc_added": {
+        "label": "LoCa",
+        "group": "Commit"
+    },
+    "commits_loc_changed": {
+        "label": "LoCc",
+        "group": "Commit"
+    },
+    "commits_loc_deleted": {
+        "label": "LoCd",
+        "group": "Commit"
+    },
+    "commits_total": {
+        "label": "#C",
+        "group": "Commit"
+    },
+    "M1": {
+        "label": "M1",
+        "group": "File-Level"
+    },
+    "M2": {
+        "label": "M2",
+        "group": "File-Level"
+    },
+    "M7": {
+        "label": "M7",
+        "group": "File-Level"
+    },
+    "pull_requests_successful": {
+        "label": "#SPR",
+        "group": "Pull Requests"
+    },
+    "pull_requests_total": {
+        "label": "#PR",
+        "group": "Pull Requests"
+    },
+    "pull_requests_time_to_close": {
+        "label": "$\\text{T}_{\\text{PRc}}$",
+        "group": "Pull Requests"
+    },
+    "pull_requests_time_to_merge": {
+        "label": "$\\text{T}_{\\text{PRm}}$",
+        "group": "Pull Requests"
+    },
+    "releases": {
+        "label": "#R",
+        "group": "Other"
+    },
+    "time_to_merge_into_main": {
+        "label": "$\\text{T}_{\\text{Bm}}$",
+        "group": "Other"
+    }
+}

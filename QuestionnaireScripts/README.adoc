@@ -1,0 +1,74 @@
+= Questionnaire Scripts
+
+This directory contains scripts for processing, analyzing, and visualizing questionnaire data collected from study participants. The scripts integrate survey responses with the quantitative analysis results to provide a comprehensive view of participant characteristics and experiences.
+
+The underlying data is stored in the university's GitLab, too. Refer to the Root README for further information.
+
+== Scripts
+
+=== link:create_demographics_table.ipynb[`create_demographics_table.ipynb`] - Participant Demographics Analysis
+
+This notebook processes questionnaire data to create the demographics table presented in section 4.1 of the thesis. It transforms the categories into appropriate visualizations, stored in link:graphics/participant_table/[`graphics/participant_table`]
+
+
+==== Analysis Categories
+* **Experience Metrics** (histograms):
+    - `profYearsProgramming` - Professional programming experience (years)
+    - `progExp` - Overall programming experience level
+    - `yearsProgramming` - Total years programming
+* **Background Information** (mean or count):
+** `projectSize` - Size of projects typically worked on
+** `education` - Highest educational achievement
+** `framework` - Development frameworks used
+** `ide` - Integrated development environments used
+** `progLang` - Primary programming languages
+* **Comparative Assessments** (likert style plots):
+** `progExpCompared[CEE1]` - Experience compared to colleagues
+** `progExpCompared[CTE]` - Experience compared to team
+** `progExpCompared[PE]` - Experience compared to peers
+
+=== link:create_questionnaire_list.ipynb[`create_questionnaire_list.ipynb`] - Response Analysis and Aggregation
+
+This notebook generates summary statistics for each of the analyzed questionnaire answers, visualizing histograms for each of the answers.
+
+It also utilizes the merged overview to generate the group separated visualizations and statistics (positive, negative, mixed, trendless groups), utilizing a questionnaire mapping (path set in file) to change how questions are visualized.
+
+== Configuration and Dependencies
+
+=== Environment Variables
+Uses the same `.env` configuration as other analysis scripts:
+
+[source,env]
+----
+RESULTS_DIRECTORY=/path/to/analysis/results
+BUCKET_SIZE=90
+PARTICIPANTS_TO_REMOVE=['participant1','participant2']
+----
+=== Dependencies
+[source,bash]
+----
+pip install pandas matplotlib seaborn plot-likert numpy
+----
+
+== Output Structure
+
+=== link:QuestionnaireFiles/[`QuestionnaireFiles/`] - Processed Survey Data
+Currently empty, intended for storing processed questionnaire datasets.
+
+=== link:graphics/[`graphics/`] - Generated Visualizations
+
+==== link:graphics/participant_table/[`participant_table/`] - Demographics Visualizations
+* **`profYearsProgramming_distribution.png`** - Professional experience distribution
+* **`progExp_distribution.png`** - Overall programming experience levels
+* **`yearsProgramming_distribution.png`** - Total programming experience distribution
+* **`progExpCompared[CEE1]_likerts.png`** - Experience comparison with colleagues
+* **`progExpCompared[CTE]_likerts.png`** - Experience comparison with team
+* **`progExpCompared[PE]_likerts.png`** - Experience comparison with peers
+
+== Analysis Workflow
+The workflow is the same it is for the other analysis scripts.
+
+
+== Integration with Thesis
+
+The generated overview graphics can be found in section 4.2 of the thesis.
